@@ -4,11 +4,11 @@ First Button Behaviour: When the user is away or does not want the circuit to fu
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setButtonPin(ButtonPin = 6)
-currentValue(distanceRead = ButtonPin)
-activateButton0(if distanceRead == 1)
-activateButton1(write HIGH to ButtonPin)
-activateButton2(write LOW to ButtonPin)
+setbuttonPin(ButtonPin = 6)
+currentValue(fbRead = buttonPin)
+activateButton0(if fbRead == 1)
+activateButton1(write 1 to ButtonPin)
+activateButton2(write 0 to ButtonPin)
 
 terminalStart --> setButtonPin
 setButtonPin --> currentValue
