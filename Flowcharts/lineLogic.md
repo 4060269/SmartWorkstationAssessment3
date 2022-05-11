@@ -5,11 +5,11 @@ Line Sensor Behaviour: When the line sensor detects someone on the seat, it will
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setLinePin(linePin = 5)
-currentValue(distanceRead = linePin)
-activateLine0(if distanceRead == 1)
-activateLine1(write HIGH to linePin)
-activateLine2(write LOW to linePin)
+setLinePin(int linePin = 5)
+currentValue(digitalRead = lineValue)
+activateLine0(if lineValue == 1)
+activateLine1(write HIGH to bluetoothState)
+activateLine2(write LOW to bluetoothState && mostCircuitState)
 
 terminalStart --> setLinePin
 setLinePin --> currentValue
