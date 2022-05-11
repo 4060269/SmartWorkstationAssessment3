@@ -6,9 +6,9 @@ terminalStart([Start])
 terminalEnd([End])
 setbuttonValue(int buttonfirstState = 0)
 activateButton0(if buttonfirstState == 1)
-activateButton1(deactivateDC = 1)
+activateButton1(deactivateCircuit = 1)
 activateButton2(buttonfirstState == 0)
-activateButton3(deactivateDC = 0)
+activateButton3(deactivateCircuit = 0)
    
 terminalStart --> setbuttonValue
 setbuttonValue --> activateButton0
