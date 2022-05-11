@@ -19,4 +19,3 @@ activateButton0 --> |Else| activateButton2
 activateButton1 --> terminalEnd
 activateButton2 --> terminalEnd
 ```
-
