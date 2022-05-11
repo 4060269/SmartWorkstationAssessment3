@@ -9,7 +9,7 @@ setLinePin(int linePin = 5)
 currentValue(digitalRead = lineValue)
 activateLine0(if lineValue == 1)
 activateLine1(write HIGH to bluetoothState)
-activateLine2(write LOW to bluetoothState && mostCircuitState)
+activateLine2(write LOW to bluetoothState && deactivatemostCircuit)
 
 terminalStart --> setLinePin
 setLinePin --> currentValue
