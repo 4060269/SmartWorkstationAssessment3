@@ -4,11 +4,11 @@ First Button Behaviour: When the user is away or does not want the circuit to fu
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setbuttonPin(const int buttonPin = 3)
+setbuttonPin(int buttonPin = 3)
 setbuttonValue(int buttonValue = 0)
 activateButton0(if buttonValue == 1)
-activateButton1(digitalWrite 1 to deactivateloopVariable)
-activateButton2(digitalwrite 0 to deactivateloopVariable)
+activateButton1(digitalWrite 1 to deactivateCircuit)
+activateButton2(digitalwrite 0 to deactivateCircuit)
    
 terminalStart --> setbuttonPin
 setbuttonPin --> setbuttonValue
