@@ -4,17 +4,17 @@ First Button Behaviour: When the user is away or does not want the circuit to fu
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setbuttonPin(int buttonPin = 3)
-setbuttonValue(int buttonValue = 0)
-activateButton0(if buttonValue == 1)
-activateButton1(digitalWrite 1 to deactivateCircuit)
-activateButton2(digitalwrite 0 to deactivateCircuit)
+setbuttonValue(int buttonfirstState = 0)
+activateButton0(if buttonfirstState == 1)
+activateButton1(deactivateDC = 1)
+activateButton2(buttonfirstState == 0)
+activateButton3(deactivateDC = 0)
    
-terminalStart --> setbuttonPin
-setbuttonPin --> setbuttonValue
+terminalStart --> setbuttonValue
 setbuttonValue --> activateButton0
 activateButton0 --> |True| activateButton1
-activateButton0 --> |Else| activateButton2
+activateButton0 --> |Else If| activateButton2
 activateButton1 --> terminalEnd
-activateButton2 --> terminalEnd
+activateButton2 --> activateButton3
+activateButton3 --> terminalEnd
 ```
