@@ -8,7 +8,7 @@ setVariable(int potValue = analogRead)
 activatePotentiometer0(if potValue => 0)
 activatePotentiometer1(write potValue to potsonarDistance)
 
-terminalStart --> setvariable
+terminalStart --> setVariable
 setVariable --> activatePotentiometer0
 activatePotentiometer0 --> activatePotentiometer1
 activatePotentiometer1 --> terminalEnd
