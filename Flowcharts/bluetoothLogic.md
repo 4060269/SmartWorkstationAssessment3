@@ -5,8 +5,7 @@ Bluetooth Behaviour: This acts as authentication to automate the login process, 
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setSonarPins(sonarPins = 3, 4)
-setThreshold(threshold = 50cm)
+setbluetoothPin(int bluetoothPin = 13)
 createSonarValue(sonarValue = 0)
 currentValue(distanceRead = pin 3, 4)
 activateSonar0(if distanceRead <= 50)
@@ -14,8 +13,7 @@ activateSonar1(write HIGH to sonarPins)
 activateSonar2(write LOW to sonarPins)
 
 terminalStart --> setSonarPins
-setSonarPins --> setThreshold
-setThreshold --> createSonarValue
+setSonarPins --> createSonarValue
 createSonarValue --> currentValue
 currentValue --> activateSonar0
 activateSonar0 --> |True| activateSonar1
