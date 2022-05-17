@@ -7,7 +7,7 @@ terminalStart([Start])
 terminalEnd([End])
 setsonarValue(int sonarValue = digitalRead from the sonar)
 setsonarThreshold(int threshold = 50cm)
-activateSonar0(if the sonarValue is <= the threshold)
+activateSonar0(if the sonarValue is < or = to the threshold)
 activateSonar1(digitalWrite 1 to powercomputerState)
 activateSonar2(do nothing)
 
