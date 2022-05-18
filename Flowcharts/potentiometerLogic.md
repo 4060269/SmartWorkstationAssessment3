@@ -11,7 +11,8 @@ activatePotentiometer2(Do nothing, empty Else statement)
 
 terminalStart --> setVariable
 setVariable --> activatePotentiometer0
-activatePotentiometer0 --> |If| activatePotentiometer1
-activatePotentiometer1 --> |Else| activatePotentiometer2 
+activatePotentiometer0 --> |True| activatePotentiometer1
+activatePotentiometer0--> |False| activatePotentiometer2 
+activatePotentiometer1 --> terminalEnd
 activatePotentiometer2 --> terminalEnd
 ```
