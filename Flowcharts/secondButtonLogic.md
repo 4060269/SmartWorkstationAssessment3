@@ -4,8 +4,8 @@ Second Button Behaviour: The second button will act as an on and off switch for 
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setbuttonValue(int buttonthirdState = digitalRead from the third button)
-activateButton0(if buttonthirdState == 1)
+setbuttonValue(int buttonsecondState = digitalRead from the second button)
+activateButton0(if buttonsecondState == 1)
 activateButton1(deactivateDC = 1)
 activateButton2(deactivateDC = 0)
    
