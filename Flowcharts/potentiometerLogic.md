@@ -7,9 +7,11 @@ terminalEnd([End])
 setVariable(int potValue = analogRead from the potentiometer pin)
 activatePotentiometer0(if potValue => 0)
 activatePotentiometer1(write potValue to potsonarDistance)
+activatePotentiometer2(Do nothing, empty Else statement)
 
 terminalStart --> setVariable
 setVariable --> activatePotentiometer0
-activatePotentiometer0 --> activatePotentiometer1
-activatePotentiometer1 --> terminalEnd
+activatePotentiometer0 --> |If| activatePotentiometer1
+activatePotentiometer1 --> |Else| activatePotentiometer2 
+activatePotentiometer2 --> terminalEnd
 ```
