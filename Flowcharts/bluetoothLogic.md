@@ -1,23 +1,20 @@
-Bluetooth Behaviour: This acts as authentication to automate the login process, when the bluetooth module detects the users phone, tablet, laptop or even smart watch within a certain threshold, it will automatically unlock the users computer, otherwise it will stay locked.
+Bluetooth Behaviour: This acts as authentication to automate the login process when the Bluetooth module detects the user's phone, tablet, laptop or even smartwatch within a certain threshold, it will automatically unlock the user's computer, otherwise, it will stay locked.
 
+blueconState is a boolean global variable that stores the bluetooth module's connection state; whether it is paired with a device or not.
 
 ```mermaid
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setbluetoothPin(int bluetoothPin = 13)
-createSonarValue(sonarValue = 0)
-currentValue(distanceRead = pin 3, 4)
-activateSonar0(if distanceRead <= 50)
-activateSonar1(write HIGH to sonarPins)
-activateSonar2(write LOW to sonarPins)
+setValue(bool blueValue = digitalRead from bluetooth state pin)
+activateBluetooth0(if blueValue == 1)
+activateBluetooth1(write true to blueconState)
+activateBluetooth2(write false to blueconState)
 
-terminalStart --> setSonarPins
-setSonarPins --> createSonarValue
-createSonarValue --> currentValue
-currentValue --> activateSonar0
-activateSonar0 --> |True| activateSonar1
-activateSonar0 --> |False| activateSonar2
-activateSonar1 --> terminalEnd
-activateSonar2 --> terminalEnd
+terminalStart --> setValue
+setValue --> activateBluetooth0 
+activateBluetooth0 --> |True| activateBluetooth1
+activateBluetooth0 --> |Else| activateBluetooth2
+activateBluetooth1 --> terminalEnd
+activateBluetooth2 --> terminalEnd
 ```
