@@ -5,15 +5,39 @@ The program's layout: There will be two main loops that the program will loop th
 flowchart TD
 terminalStart([Start])
 terminalEnd([End])
-setValue(int lineValue = digitalRead from line sensor)
-activateLine0(if lineValue == 1)
-activateLine1(write 1 to bluetoothState)
-activateLine2(write 0 to bluetoothState)
+activate0(Global variables. setting pins, general initialization)
+activate1(void setup)
+activate2(this will house all of the code that is needed to run once)
+activate3(void loop)
+activate4(this will run all of the functions in the order shown below, to make them run repeatedly)
+activate5(void Sonar)
+activate6(void Line sensor)
+activate7(void Buttons)
+activate8(void Potentiometer)
+activate9(void buttons)
+activate10(void Light module)
+activate11(void Piezo)
+activate12(void DC motor)
+activate13(void Servo motor)
+activate14(void SD card)
+activate15(Extra code that will go after all functions, e.g SD card log event)
 
-terminalStart --> setValue
-setValue --> activateLine0
-activateLine0 --> |True| activateLine1
-activateLine0 --> |Else| activateLine2
-activateLine1 --> terminalEnd
-activateLine2 --> terminalEnd
+
+terminalStart --> activate0
+activate0 --> activate1
+activate1 --> activate2
+activate2 --> activate3
+activate3 --> activate4
+activate4 --> activate5
+activate5 --> activate6
+activate6 --> activate7
+activate7 --> activate8
+activate8 --> activate9
+activate9 --> activate10
+activate10 --> activate11
+activate11 --> activate12
+activate12 --> activate13
+activate13 --> activate14
+activate14 --> activate15
+activate15 --> terminalEnd
 ```
